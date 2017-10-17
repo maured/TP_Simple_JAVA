@@ -11,7 +11,8 @@ public class Main {
         System.out.println("Tapez 2 : Recherchez des fichiers par son extension");
         System.out.println("Tapez 3 : Vérifiez si le chemin existe ; Si oui dire si c'est un fichier ou un dossier");
         System.out.println("Tapez 4 : Sauvegardez dans un fichier tout ce que vous écrirez");
-        System.out.println("Tapez 5 : Copiez le contenu d'une image sur internet dans un fichier");
+        System.out.println("Tapez 5 : Copiez le contenu d'un fichier dans un autre fichier");
+        System.out.println("Tapez 6 : Copiez le contenu d'une image sur internet dans un fichier");
         int user_choice = sc.nextInt();
 
         switch (user_choice)
@@ -54,6 +55,18 @@ public class Main {
                 break;
 
             case 5 :
+
+                System.out.println("Veuillez saisir le PATH vers votre 1er fichier : \\nom_de_votre_img.jpg");
+                Scanner fileIn = new Scanner(System.in);
+                String inFile = fileIn.nextLine();
+
+                System.out.println("Veuillez saisir le PATH vers votre 2nd fichier : \\nom_de_votre_img.jpg");
+                Scanner fileOut = new Scanner(System.in);
+                String outFile = fileOut.nextLine();
+                JavaFileCopier.copier(inFile,outFile);
+                break;
+
+            case 6 :
                 String imageUrl = "https://www.w3schools.com/css/img_fjords.jpg";
 
                 System.out.println("Veuillez saisir le PATH vers votre destination de stockage puis tapez : \\nom_de_votre_img.jpg");
